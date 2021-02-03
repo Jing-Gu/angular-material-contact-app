@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <button mat-button class="sidenav-toggle"
+          (click)='toggleSidenavClicked()'>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h2>Contact Manager</h2>
+
+  <div class='btn-wrapper'>
+    <button mat-button (click)='toggleThemeClicked()'>
+      <mat-icon *ngIf="themeIsDark">dark_mode</mat-icon>
+      <mat-icon *ngIf="!themeIsDark">light_mode</mat-icon>
+    </button>
+    <button mat-button [matMenuTriggerFor]='menu'>
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu='matMenu'>
+      <button mat-menu-item (click)='openAddContactDialog()'>New contact</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
